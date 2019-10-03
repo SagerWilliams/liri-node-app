@@ -1,5 +1,5 @@
 // imports
-// spotify keys
+// api keys
 var keys = require("../api/keys.js");
 
 // song info constructor

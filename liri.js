@@ -1,14 +1,12 @@
 // imports
 // fs
 var fs = require('fs');
-// axios
-const axios = require('axios');
-// moment
-var moment = require('moment');
 // dotenv
 require("dotenv").config();
 // findSong file
 var findSong = require("./modules/api/findSong.js");
+// findConcerts file
+var findConcerts = require("./modules/api/findConcerts.js");
 
 // variables
 var command = process.argv[2];
@@ -23,6 +21,10 @@ function liri(command, arg) {
             console.log("Looking for: " + arg);
             findSong(arg);
             break;
+        case "concert-this":
+            console.log("Looking for: " + arg);
+            findConcerts(arg);
+            break;
         default:
             console.log("Please choose from these commands: \n Command: spotify-this-song Argument: (song name) \n Command: concert-this Argument: (artist or band name) \n Command: movie-this Argument: (movie name) \n Command: do-what-it-says Argument: (none)");
     }
@@ -31,12 +33,6 @@ function liri(command, arg) {
         // name of venue
         // venue location
         // date of event (MM/DD/YYYY)
-    
-    // spotify this song
-        // artist(s)
-        // song name
-        // preview link of the song from spotify
-        // album the song is from
     
     // movie this
         // title

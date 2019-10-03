@@ -35,6 +35,7 @@ var findConcerts = function(band) {
     axios.get(queryUrl).then(function(response) {
         // get the list of shows and log them
         var showList = response.data;
+        console.log(showList);
         for (show in showList) {
             var concert = new Concert(showList[show].venue.name, showList[show].venue.city, showList[show].venue.country, showList[show].datetime);
             concert.printConcertInfo();

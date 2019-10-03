@@ -7,6 +7,8 @@ require("dotenv").config();
 var findSong = require("./modules/api/findSong.js");
 // findConcerts file
 var findConcerts = require("./modules/api/findConcerts.js");
+// findMovie file
+var findMovie = require("./modules/api/findMovie.js");
 
 // variables
 var command = process.argv[2];
@@ -25,15 +27,15 @@ function liri(command, arg) {
             console.log("Looking for: " + arg);
             findConcerts(arg);
             break;
+        case "movie-this":
+            console.log("Looking for: " + arg);
+            findMovie(arg);
+            break;
         default:
             console.log("Please choose from these commands: \n Command: spotify-this-song Argument: (song name) \n Command: concert-this Argument: (artist or band name) \n Command: movie-this Argument: (movie name) \n Command: do-what-it-says Argument: (none)");
     }
 }
-    // Concert this
-        // name of venue
-        // venue location
-        // date of event (MM/DD/YYYY)
-    
+
     // movie this
         // title
         // year of release

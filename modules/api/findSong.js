@@ -9,6 +9,7 @@ function Song(artists, name, album, preview) {
     this.album = album,
     this.preview = preview,
     this.printSongInfo = function() {
+        console.log("- - - - - - - - - - - - - - -");
         console.log("Artists: " + JSON.stringify(this.artists));
         console.log("Name: " + this.name);
         console.log("Album: " + this.album);

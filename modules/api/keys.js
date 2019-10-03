@@ -3,3 +3,4 @@ exports.spotify = {
   secret: process.env.SPOTIFY_SECRET
 };
 exports.bandsNearMe = "codingbootcamp";
+exports.omdb = "trilogy";

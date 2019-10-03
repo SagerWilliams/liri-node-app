@@ -31,21 +31,31 @@ function liri(command, arg) {
             console.log("Looking for: " + arg);
             findMovie(arg);
             break;
+        case "do-what-it-says":
+            console.log("Getting something random for you!")
+            doRandom();
+            break;
         default:
             console.log("Please choose from these commands: \n Command: spotify-this-song Argument: (song name) \n Command: concert-this Argument: (artist or band name) \n Command: movie-this Argument: (movie name) \n Command: do-what-it-says Argument: (none)");
     }
 }
 
-    // movie this
-        // title
-        // year of release
-        // IMDB rating
-        // rotten tomatoes rating
-        // country the movie was produced in
-        // language of the movie
-        // plot of the movie
-        // actors in the movie
-
+function doRandom() {
+    // reads the random.txt file and picks a random command
+    fs.readFile("./random.txt", "utf8", function(error, data) {
+        if (error) {
+            console.log("Error: ", error);
+        } 
+        // make a list of commands by splitting on each line
+        var listOfOptions = data.split("\n");
+        // pick a random command
+        var randomIndex = Math.floor(Math.random() * listOfOptions.length);
+        var chosen = listOfOptions[randomIndex]
+        var chosenSplit = chosen.split(",");
+        // run the main operation. removing the quotes from the second argument because they break concert
+        liri(chosenSplit[0], chosenSplit[1]);
+    })
+}
     // do what it says
         // using the fs node package read random.txt to
         // call commands for each of the above

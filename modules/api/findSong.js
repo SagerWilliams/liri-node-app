@@ -8,9 +8,16 @@ function Song(artists, name, album, preview) {
     this.name = name,
     this.album = album,
     this.preview = preview,
+    this.stringOfArtists = function(artists) {
+        var list = artists[0].name;
+        for (var i = 1; i < artists.length; i++) {
+            list += ", " + artists[i].name;
+        }
+        return list;
+    },
     this.printSongInfo = function() {
         console.log("- - - - - - - - - - - - - - -");
-        console.log("Artists: " + JSON.stringify(this.artists));
+        console.log("Artists: " + this.stringOfArtists(this.artists));
         console.log("Name: " + this.name);
         console.log("Album: " + this.album);
         console.log("Preview: " + this.preview);

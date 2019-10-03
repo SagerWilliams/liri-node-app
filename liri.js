@@ -52,12 +52,11 @@ function doRandom() {
         var randomIndex = Math.floor(Math.random() * listOfOptions.length);
         var chosen = listOfOptions[randomIndex]
         var chosenSplit = chosen.split(",");
-        // run the main operation. removing the quotes from the second argument because they break concert
-        liri(chosenSplit[0], chosenSplit[1]);
+        // call liri() with chosen command and arg. Concert has trouble with quotes so .replace(/"/g,"") is used to remove them
+        console.log(chosenSplit[0], chosenSplit[1]);
+        liri(chosenSplit[0], chosenSplit[1].replace(/"/g,""));
     })
 }
-    // do what it says
-        // using the fs node package read random.txt to
-        // call commands for each of the above
 
+// call liri command to start application
 liri(command, arg);

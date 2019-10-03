@@ -45,4 +45,5 @@ var findConcerts = function(band) {
     });
 };
 
+// export information for liri.js
 module.exports = findConcerts;

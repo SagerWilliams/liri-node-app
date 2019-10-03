@@ -49,10 +49,10 @@ function doRandom() {
         // make a list of commands by splitting on each line
         var listOfOptions = data.split("\n");
         // pick a random command
-        var randomIndex = Math.floor(Math.random() * listOfOptions.length);
-        var chosen = listOfOptions[randomIndex]
+        var random = Math.floor(Math.random() * listOfOptions.length);
+        var chosen = listOfOptions[random]
         var chosenSplit = chosen.split(",");
-        // call liri() with chosen command and arg. Concert has trouble with quotes so .replace(/"/g,"") is used to remove them
+        // call liri() with chosen command and arg. Concert has trouble with quotes so .replace(/"/g,"") is used to remove them (thanks stackoverflow!)
         console.log(chosenSplit[0], chosenSplit[1]);
         liri(chosenSplit[0], chosenSplit[1].replace(/"/g,""));
     })

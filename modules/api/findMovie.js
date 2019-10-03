@@ -51,4 +51,5 @@ var findMovie = function (movie) {
     });
 };
 
+// export information for liri.js
 module.exports = findMovie;
